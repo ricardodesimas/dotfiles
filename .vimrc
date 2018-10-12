@@ -29,6 +29,7 @@ set nowrap
 set hlsearch
 set ruler
 set backspace=indent,eol,start
+set scrolloff=999
 
 set noexpandtab
 set tabstop=4
