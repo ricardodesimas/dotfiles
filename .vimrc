@@ -95,3 +95,5 @@ let &colorcolumn="80,".join(range(400,999),",")
 
 let NERDTreeShowHidden=1
 let NERDTreeWinSize=50
+
+hi Normal ctermbg=NONE guibg=NONE
