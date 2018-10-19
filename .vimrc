@@ -11,6 +11,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'ajh17/spacegray.vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'majutsushi/tagbar'
 
 call vundle#end()
 
@@ -56,6 +57,7 @@ autocmd VimEnter * wincmd p
 nmap <F5> :NERDTreeToggle<CR>
 nmap <F6> :NERDTreeFind<CR>
 nmap <F7> :Gblame<CR>
+nmap <F8> :TagbarToggle<CR>
 
 " Insert mode Red Numbers / Normal mode Yellow Numbers 
 highlight LineNr ctermfg=3 ctermbg=16
@@ -96,4 +98,4 @@ let &colorcolumn="80,".join(range(400,999),",")
 let NERDTreeShowHidden=1
 let NERDTreeWinSize=50
 
-hi Normal ctermbg=NONE guibg=NONE
+hi Normal guibg=NONE ctermbg=NONE
