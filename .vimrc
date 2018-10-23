@@ -39,7 +39,7 @@ set shiftwidth=4
 
 augroup twospaces
 	autocmd!
-	autocmd FileType javascript,json,html,ruby setlocal expandtab ts=2 sts=2 sw=2
+	autocmd FileType javascript,json,html setlocal expandtab ts=2 sts=2 sw=2
 augroup END
 
 augroup fourspaces
@@ -87,13 +87,15 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_php_checkers=['php', 'phpcs']
 let g:syntastic_php_phpcs_exec = '~/.composer/vendor/bin/phpcs'
 let g:syntastic_php_phpcs_args='--standard=PSR12 -n'
-let g:syntastic_php_phpmd_exec = '~/.composer/vendor/bin/phpmd'
-let g:syntastic_php_phpmd_post_args = 'cleancode,codesize,controversial,design,unusedcode'
+let g:syntastic_php_phpmd_exec = '~/.composer/vendor/bin/phpmd' let g:syntastic_php_phpmd_post_args = 'cleancode,codesize,controversial,design,unusedcode'
 
 " 80 column highlight
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
-let &colorcolumn=join(range(81,999),",")
+let &colorcolumn=join(range(81,120),",")
 let &colorcolumn="80,".join(range(400,999),",")
+ 
+highlight OverLength ctermbg=160 ctermfg=white guibg=NONE
+match OverLength /\%120v.\+/
 
 let NERDTreeShowHidden=1
 let NERDTreeWinSize=50
