@@ -87,7 +87,8 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_php_checkers=['php', 'phpcs']
 let g:syntastic_php_phpcs_exec = '~/.composer/vendor/bin/phpcs'
 let g:syntastic_php_phpcs_args='--standard=PSR12 -n'
-let g:syntastic_php_phpmd_exec = '~/.composer/vendor/bin/phpmd' let g:syntastic_php_phpmd_post_args = 'cleancode,codesize,controversial,design,unusedcode'
+let g:syntastic_php_phpmd_exec = '~/.composer/vendor/bin/phpmd'
+let g:syntastic_php_phpmd_post_args = 'cleancode,codesize,controversial,design,unusedcode'
 
 " 80 column highlight
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
