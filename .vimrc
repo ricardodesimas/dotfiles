@@ -74,9 +74,11 @@ endfunction
 au InsertEnter * call InsertStatuslineColor(v:insertmode)
 au InsertLeave * call InsertLeaveActions()
 
+set statusline=[%n]\ %t
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+set statusline+=%=%l:%c
 
 " Check PSR-2 on php files and show errors at the bottom
 let g:syntastic_always_populate_loc_list = 1
