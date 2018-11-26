@@ -12,6 +12,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'ajh17/spacegray.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'majutsushi/tagbar'
+Plugin 'posva/vim-vue'
 
 call vundle#end()
 
@@ -53,6 +54,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Move cursor to main window (not NERDTree)
 autocmd VimEnter * wincmd p
+
+autocmd FileType vue syntax sync fromstart
 
 nmap <F5> :NERDTreeToggle<CR>
 nmap <F6> :NERDTreeFind<CR>
