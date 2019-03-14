@@ -13,6 +13,7 @@ Plugin 'ajh17/spacegray.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'majutsushi/tagbar'
 Plugin 'posva/vim-vue'
+Plugin 'fholgado/minibufexpl.vim'
 
 call vundle#end()
 
@@ -87,13 +88,15 @@ set statusline+=%=%l:%c
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 
 let g:syntastic_php_checkers=['php', 'phpcs']
-let g:syntastic_php_phpcs_exec = '~/.composer/vendor/bin/phpcs'
+let g:syntastic_php_phpcs_exec = '~/.config/composer/vendor/bin/phpcs'
 let g:syntastic_php_phpcs_args='--standard=PSR12 -n'
 let g:syntastic_php_phpmd_exec = '~/.composer/vendor/bin/phpmd'
 let g:syntastic_php_phpmd_post_args = 'cleancode,codesize,controversial,design,unusedcode'
+
+let g:vue_disable_pre_processors=1
 
 " 80 column highlight
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
@@ -104,6 +107,11 @@ highlight OverLength ctermbg=160 ctermfg=white guibg=NONE
 match OverLength /\%120v.\+/
 
 let NERDTreeShowHidden=1
-let NERDTreeWinSize=50
+let NERDTreeWinSize=30
 
 hi Normal guibg=NONE ctermbg=NONE
+
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
