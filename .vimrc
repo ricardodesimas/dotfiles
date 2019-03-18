@@ -13,6 +13,7 @@ Plugin 'ajh17/spacegray.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'majutsushi/tagbar'
 Plugin 'posva/vim-vue'
+Plugin 'fholgado/minibufexpl.vim'
 
 call vundle#end()
 
@@ -96,6 +97,8 @@ let g:syntastic_php_phpcs_args='--standard=PSR12 -n'
 let g:syntastic_php_phpmd_exec='~/.composer/vendor/bin/phpmd'
 let g:syntastic_php_phpmd_post_args='cleancode,codesize,controversial,design,unusedcode'
 
+let g:vue_disable_pre_processors=1
+
 " 80 column highlight
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 let &colorcolumn=join(range(81,120),",")
@@ -108,3 +111,8 @@ let NERDTreeShowHidden=1
 let NERDTreeWinSize=30
 
 hi Normal guibg=NONE ctermbg=NONE
+
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
