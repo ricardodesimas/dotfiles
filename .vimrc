@@ -33,6 +33,7 @@ set hlsearch
 set ruler
 set backspace=indent,eol,start
 set scrolloff=999
+set mouse=a
 
 set noexpandtab
 set tabstop=4
@@ -85,16 +86,16 @@ set statusline+=%*
 set statusline+=%=%l:%c
 
 " Check PSR-2 on php files and show errors at the bottom
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=1
 
 let g:syntastic_php_checkers=['php', 'phpcs']
-let g:syntastic_php_phpcs_exec = '~/.config/composer/vendor/bin/phpcs'
+let g:syntastic_php_phpcs_exec='~/.composer/vendor/bin/phpcs'
 let g:syntastic_php_phpcs_args='--standard=PSR12 -n'
-let g:syntastic_php_phpmd_exec = '~/.composer/vendor/bin/phpmd'
-let g:syntastic_php_phpmd_post_args = 'cleancode,codesize,controversial,design,unusedcode'
+let g:syntastic_php_phpmd_exec='~/.composer/vendor/bin/phpmd'
+let g:syntastic_php_phpmd_post_args='cleancode,codesize,controversial,design,unusedcode'
 
 let g:vue_disable_pre_processors=1
 
