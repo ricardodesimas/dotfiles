@@ -9,19 +9,16 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'ajh17/spacegray.vim'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'majutsushi/tagbar'
 Plugin 'posva/vim-vue'
 Plugin 'fholgado/minibufexpl.vim'
+Plugin 'cocopon/iceberg.vim'
 
 call vundle#end()
 
+colorscheme iceberg
+
 syntax on
-set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
-" colorscheme spacegray
 
 filetype plugin indent on
 
@@ -64,16 +61,15 @@ nmap <F6> :NERDTreeFind<CR>
 nmap <F7> :Gblame<CR>
 nmap <F8> :TagbarToggle<CR>
 
-" Insert mode Red Numbers / Normal mode Yellow Numbers 
-highlight LineNr ctermfg=3 ctermbg=16
+" Insert mode Red Numbers / Normal mode iceberg default 
 function! InsertStatuslineColor(mode)
 	if a:mode == 'i'
-		highlight LineNr ctermfg=1 ctermbg=16
+		highlight LineNr ctermbg=235 ctermfg=1 guibg=#1e2132 guifg=#444b71
 	endif
 endfunction
 
 function! InsertLeaveActions()
-	highlight LineNr ctermfg=3 ctermbg=16
+	highlight LineNr ctermbg=235 ctermfg=239 guibg=#1e2132 guifg=#444b71
 endfunction
 
 au InsertEnter * call InsertStatuslineColor(v:insertmode)
@@ -100,7 +96,7 @@ let g:syntastic_php_phpmd_post_args='cleancode,codesize,controversial,design,unu
 let g:vue_disable_pre_processors=1
 
 " 80 column highlight
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
+ highlight ColorColumn ctermbg=235 guibg=#2c2d27
 let &colorcolumn=join(range(81,120),",")
 let &colorcolumn="80,".join(range(400,999),",")
  
@@ -109,8 +105,6 @@ match OverLength /\%120v.\+/
 
 let NERDTreeShowHidden=1
 let NERDTreeWinSize=30
-
-hi Normal guibg=NONE ctermbg=NONE
 
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
