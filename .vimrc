@@ -30,7 +30,7 @@ set hlsearch
 set ruler
 set backspace=indent,eol,start
 set scrolloff=999
-set mouse=a
+set mouse=r
 
 set noexpandtab
 set tabstop=4
