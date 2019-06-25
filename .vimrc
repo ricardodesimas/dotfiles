@@ -11,14 +11,16 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'posva/vim-vue'
-Plugin 'fholgado/minibufexpl.vim'
-Plugin 'cocopon/iceberg.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 
-colorscheme iceberg
-
 syntax on
+set background=dark
+colorscheme solarized
+let g:solarized_termcolors=256
 
 filetype plugin indent on
 
@@ -54,26 +56,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Move cursor to main window (not NERDTree)
 autocmd VimEnter * wincmd p
 
-autocmd FileType vue syntax sync fromstart
-
 nmap <F5> :NERDTreeToggle<CR>
 nmap <F6> :NERDTreeFind<CR>
 nmap <F7> :Gblame<CR>
 nmap <F8> :TagbarToggle<CR>
-
-" Insert mode Red Numbers / Normal mode iceberg default 
-function! InsertStatuslineColor(mode)
-	if a:mode == 'i'
-		highlight LineNr ctermbg=235 ctermfg=1 guibg=#1e2132 guifg=#444b71
-	endif
-endfunction
-
-function! InsertLeaveActions()
-	highlight LineNr ctermbg=235 ctermfg=239 guibg=#1e2132 guifg=#444b71
-endfunction
-
-au InsertEnter * call InsertStatuslineColor(v:insertmode)
-au InsertLeave * call InsertLeaveActions()
 
 set statusline=[%n]\ %t
 set statusline+=%#warningmsg#
@@ -93,20 +79,17 @@ let g:syntastic_php_phpcs_args='--standard=PSR12 -n'
 let g:syntastic_php_phpmd_exec='~/.composer/vendor/bin/phpmd'
 let g:syntastic_php_phpmd_post_args='cleancode,codesize,controversial,design,unusedcode'
 
-let g:vue_disable_pre_processors=1
-
 " 80 column highlight
- highlight ColorColumn ctermbg=235 guibg=#2c2d27
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
 let &colorcolumn=join(range(81,120),",")
 let &colorcolumn="80,".join(range(400,999),",")
- 
+
 highlight OverLength ctermbg=160 ctermfg=white guibg=NONE
 match OverLength /\%120v.\+/
 
 let NERDTreeShowHidden=1
 let NERDTreeWinSize=30
 
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#formatterll='unique_tail'
+let g:airline_theme='dark theme with powerline symbols'
