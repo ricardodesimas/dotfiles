@@ -1,5 +1,5 @@
 # dotfiles
 my personal dotfiles
 
-- Install Vundle (https://github.com/VundleVim/Vundle.vim)
-- Open vim and run `:PluginInstall`
+- Install Vim-Plug https://github.com/junegunn/vim-plug
+- Run PlugInstall
